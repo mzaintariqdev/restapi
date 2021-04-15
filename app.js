@@ -64,33 +64,33 @@ app.post("/students",async(req,res)=>{
 
 
 
-///get is read
+//get is read
 //for all data
-// app.get("/students",async(req,res)=>{
-// 	try{
-// 		const studentsData = await Student.find();
-// 		res.send(studentsData);
-// 	}catch(e){
-// 		res.send(e);
-// 	}
-// })
-
-
-//get data by id
-app.get("/students/:id",async(req,res)=>{
+app.get("/students",async(req,res)=>{
 	try{
-		const _id =req.params.id;
-		const studentData = await Student.findById({_id});
-		if(!studentData){
-			return res.status(404).send();
-		}
-		else{
-		res.status(500).send(studentData);
-		}
+		const studentsData = await Student.find();
+		res.send(studentsData);
 	}catch(e){
 		res.send(e);
 	}
-})///create new request and put value of id in url and we 
+})
+
+
+//get data by id
+// app.get("/students/:id",async(req,res)=>{
+// 	try{
+// 		const _id =req.params.id;
+// 		const studentData = await Student.findById({_id});
+// 		if(!studentData){
+// 			return res.status(404).send();
+// 		}
+// 		else{
+// 		res.status(500).send(studentData);
+// 		}
+// 	}catch(e){
+// 		res.send(e);
+// 	}
+// })///create new request and put value of id in url and we 
 ///will get data
 //now create a request in postman and send
 
